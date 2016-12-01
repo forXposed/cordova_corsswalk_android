@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+  <!--  <org.apache.cordova.engine.SystemWebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView"
+        ></org.apache.cordova.engine.SystemWebView>-->
+    <org.crosswalk.engine.XWalkCordovaView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView"
+        ></org.crosswalk.engine.XWalkCordovaView>
+
+    <ProgressBar android:id="@+id/pb_web"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminateDrawable="@drawable/loading_image"
+        android:visibility="gone"/>
+</FrameLayout>

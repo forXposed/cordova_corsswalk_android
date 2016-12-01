@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app">
+			<button onClick="getP()" style="font-size:30px">拍照</button></br>
+			<img alt="" src="../img/logo.png"   id="myImage"></br>
+             <button onClick="call()" style="font-size:30px">拨打电话</button></br>
+        </div>
+        <script type="text/javascript" src="android/cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+        		function getP(){
+                    function onSuccess(imageData) {
+                        var image = document.getElementById('myImage');
+                        image.src =  "data:image/jpeg;base64,"+imageData;
+                        }
+                    function onFail(message) {
+                        alert('Failed because: ' + message);
+                    }
+                    navigator.camera.getPicture(onSuccess, onFail, {sourceType:1,quality: 30,destinationType:0,targetWidth:800,targetHeight:150 });
+			    }
+
+			    function call(){
+                    function onSuccess(info) {
+                       alert( imageData);
+                     }
+                    function onFail(message) {
+                        alert('Failed because: ' + message);
+                    }
+                    cordova.exec(onSuccess, onFail, "myPlugin", "call", ["18682145967"]);
+			    }
+	    </script>
+        </body>
+</html>
+
+	
