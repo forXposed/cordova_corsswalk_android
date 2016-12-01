@@ -25,5 +25,21 @@
 	
 	app->build.gradle
 	
+	//使用corssWallk的webView 网页的渲染速度更快，兼容性好，但是包的体积会变大
+    productFlavors {
+        armv7 {
+            versionCode defaultConfig.versionCode + 2
+            ndk {
+                abiFilters "armeabi-v7a", ""
+            }
+        }
+        x86 {
+            versionCode defaultConfig.versionCode + 4
+            ndk {
+                abiFilters "x86", ""
+            }
+        }
+    }
+
 	 //使用corssWallk的webView 网页的渲染速度更快，兼容性好，但是包的体积会变大
     compile 'org.xwalk:xwalk_core_library:21.51.546.6'
